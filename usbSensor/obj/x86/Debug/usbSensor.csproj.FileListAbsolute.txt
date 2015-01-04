@@ -1,0 +1,24 @@
+C:\Users\Antonio\AppData\Local\Temporary Projects\usbSensor\bin\Debug\usbSensor.exe
+C:\Users\Antonio\AppData\Local\Temporary Projects\usbSensor\bin\Debug\usbSensor.pdb
+C:\Users\Antonio\AppData\Local\Temporary Projects\usbSensor\obj\x86\Debug\usbSensor.Form1.resources
+C:\Users\Antonio\AppData\Local\Temporary Projects\usbSensor\obj\x86\Debug\usbSensor.Properties.Resources.resources
+C:\Users\Antonio\AppData\Local\Temporary Projects\usbSensor\obj\x86\Debug\usbSensor.csproj.GenerateResource.Cache
+C:\Users\Antonio\AppData\Local\Temporary Projects\usbSensor\obj\x86\Debug\usbSensor.exe
+C:\Users\Antonio\AppData\Local\Temporary Projects\usbSensor\obj\x86\Debug\usbSensor.pdb
+C:\Users\Antonio\documents\visual studio 2010\Projects\usbSensor\usbSensor\obj\x86\Debug\usbSensor.exe
+C:\Users\Antonio\documents\visual studio 2010\Projects\usbSensor\usbSensor\obj\x86\Debug\usbSensor.pdb
+C:\Users\Antonio\documents\visual studio 2010\Projects\usbSensor\usbSensor\bin\Debug\usbSensor.exe
+C:\Users\Antonio\documents\visual studio 2010\Projects\usbSensor\usbSensor\bin\Debug\usbSensor.pdb
+C:\Users\Antonio\documents\visual studio 2010\Projects\usbSensor\usbSensor\obj\x86\Debug\usbSensor.Form1.resources
+C:\Users\Antonio\documents\visual studio 2010\Projects\usbSensor\usbSensor\obj\x86\Debug\usbSensor.Properties.Resources.resources
+C:\Users\Antonio\documents\visual studio 2010\Projects\usbSensor\usbSensor\obj\x86\Debug\usbSensor.csproj.GenerateResource.Cache
+C:\Users\Antonio\documents\visual studio 2010\Projects\usbSensor\usbSensor\obj\x86\Debug\usbSensor.csprojResolveAssemblyReference.cache
+C:\Users\Antonio\Documents\Projects\usbSensor\usbSensor\usbSensor\obj\x86\Debug\usbSensor.exe
+C:\Users\Antonio\Documents\Projects\usbSensor\usbSensor\usbSensor\obj\x86\Debug\usbSensor.pdb
+C:\Users\Antonio\Documents\Projects\usbSensor\usbSensor\usbSensor\bin\Debug\usbSensor.exe
+C:\Users\Antonio\Documents\Projects\usbSensor\usbSensor\usbSensor\bin\Debug\usbSensor.pdb
+C:\Users\Antonio\Documents\Projects\usbSensor\usbSensor\usbSensor\obj\x86\Debug\usbSensor.csprojResolveAssemblyReference.cache
+C:\Users\Antonio\Documents\Projects\usbSensor\usbSensor\usbSensor\obj\x86\Debug\usbSensor.Form1.resources
+C:\Users\Antonio\Documents\Projects\usbSensor\usbSensor\usbSensor\obj\x86\Debug\usbSensor.Properties.Resources.resources
+C:\Users\Antonio\Documents\Projects\usbSensor\usbSensor\usbSensor\obj\x86\Debug\usbSensor.csproj.GenerateResource.Cache
+C:\Users\Antonio\Documents\Projects\usbSensor\usbSensor\usbSensor\obj\x86\Debug\usbSensor.Form2.resources

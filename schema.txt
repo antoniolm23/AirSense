@@ -1,0 +1,13 @@
+SCHEMA DESCRIPTION
+
+- External sensor
+	Reads the value
+	Sends it to the internal sensor
+	Network Address: 0x1212
+
+- Internal sensor
+	Reads the sent value
+	Sends it via USB to the pc
+	Network Address: 0x1111
+
+Use of NetAddress because the MAC one cannot be modified by the user

@@ -1,0 +1,7 @@
+C:\Users\Antonio\Documents\Visual Studio 2010\Projects\usbSensor\usbSensor\bin\Release\usbSensor.exe
+C:\Users\Antonio\Documents\Visual Studio 2010\Projects\usbSensor\usbSensor\bin\Release\usbSensor.pdb
+C:\Users\Antonio\Documents\Visual Studio 2010\Projects\usbSensor\usbSensor\obj\x86\Release\usbSensor.Form1.resources
+C:\Users\Antonio\Documents\Visual Studio 2010\Projects\usbSensor\usbSensor\obj\x86\Release\usbSensor.Properties.Resources.resources
+C:\Users\Antonio\Documents\Visual Studio 2010\Projects\usbSensor\usbSensor\obj\x86\Release\usbSensor.csproj.GenerateResource.Cache
+C:\Users\Antonio\Documents\Visual Studio 2010\Projects\usbSensor\usbSensor\obj\x86\Release\usbSensor.exe
+C:\Users\Antonio\Documents\Visual Studio 2010\Projects\usbSensor\usbSensor\obj\x86\Release\usbSensor.pdb

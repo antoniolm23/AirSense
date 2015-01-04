@@ -1,0 +1,64 @@
+/*
+         * BACKGROUND_WORKER2 (TO DO TESTING PHASE)
+         * Part related to the backgroundWorker2, it is responsible of computing the average of
+         * the considered parameter
+         */
+
+        //make the other background worker to start and execute the average of the temperature
+        private void button1_Click(object sender, EventArgs e)
+        {
+            backgroundWorker2.RunWorkerAsync();
+        }
+
+        //compute the considered parameter daily mean (better with another background worker)
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en");
+            //get the actual date
+            DateTime now = DateTime.Now;
+            String date = now.ToString("yyyy/MM/dd");
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            //split the string and store the considered parameter in a list
+            char[] delimiter = { ' ' };
+            List<double> dailyParameter = new List<double>();
+            foreach (dateValue s in readParameterDate)
+            {
+                if (s.date.Equals(date))
+                {
+                    //add the temperature in the list
+                    dailyParameter.Add(s.value);
+                }
+            }
+            double avgParam = dailyParameter.Average();
+            worker.ReportProgress(0, avgParam + " "+ date);
+        }
+
+        //action to perform when the backgroundworker2 reports the progress
+        private void backgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            //convert to string the parameters passed by the reportprogress
+            String parameters = e.UserState.ToString();
+
+            //System.Diagnostics.Debug.Write("progress changed: " + parameters + '\n');
+
+            //split the string of parameters
+            char[] delimiter = { ' ' };
+            String[] splitted = parameters.Split(delimiter);
+
+            //retrieve data and temperature
+            String param = splitted[0];
+            String date = splitted[1];
+
+            //read data and temperature
+            try
+            {
+                //insert the date and temperature in the chart
+                this.chart1_Add(param, date);
+
+            }
+            catch (IndexOutOfRangeException)
+            {
+                System.Diagnostics.Debug.Write("index out of bounds");
+            }
+        }

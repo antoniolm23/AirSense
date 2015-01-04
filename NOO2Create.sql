@@ -1,0 +1,22 @@
+USE [inDoorAirQuality]
+GO
+
+/****** Object:  Table [dbo].[NO2]    Script Date: 22/10/2014 11:25:38 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[NO2](
+	[Value] [float] NULL,
+	[DateTime] [datetime] NULL,
+	[ID] [nchar](10) NOT NULL,
+ CONSTRAINT [PK_NO2] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+

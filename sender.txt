@@ -1,0 +1,195 @@
+/*
+ * This is the code to allow the communication between two Waspmotes
+ * We have a first part in which we configure the various parameters
+ * Then we have the protocol phase in which one node sends a packet, 
+ * the other sends an ACK to say packet received, all is done under
+ * a duty cycle that tries to put the burden on the receiver since
+ * in our application the receiver is wired connected to a PC so 
+ * energy consumption is not a problem for it
+ */
+//library to use
+#include <WaspXBee802.h>
+#include <WaspFrame.h>
+
+
+// PAN (Personal Area Network) Identifier 0x1234
+uint8_t  PANID[2]={0x12,0x34}; 
+
+//Part to use once everything works
+uint8_t receiverAddr = {0x11, 0x11};
+//uint8_t senderAddr = {0x12, 0x12};
+
+void configure()
+{
+
+  // init XBee 
+  xbee802.ON();
+
+
+  // wait for a second
+  delay(1000);
+
+  /////////////////////////////////////
+  // 1. set channel 
+  /////////////////////////////////////
+  xbee802.setChannel(0x0F);
+
+  // check at commmand execution flag
+  if( xbee802.error_AT == 0 ) 
+  {
+    USB.println(F("Channel set OK"));
+  }
+  else 
+  {
+    USB.println(F("Error setting channel"));
+  }
+
+
+  /////////////////////////////////////
+  // 2. set PANID
+  /////////////////////////////////////
+  xbee802.setPAN(PANID);
+
+  // check the AT commmand execution flag
+  if( xbee802.error_AT == 0 ) 
+  {
+    USB.println(F("PANID set OK"));
+  }
+  else 
+  {
+    USB.println(F("Error setting PANID"));  
+  }
+
+  /////////////////////////////////////
+  // 3. write values to XBee module memory
+  /////////////////////////////////////
+  xbee802.writeValues();
+
+  // check the AT commmand execution flag
+  if( xbee802.error_AT == 0 ) 
+  {
+    USB.println(F("write values OK"));
+  }
+  else 
+  {
+    USB.println(F("Error writing values"));  
+  }
+
+  USB.println(F("-------------------------------")); 
+
+  //Set network address
+  xbee802.setOwnNetAddress(0x12, 0x12);
+  
+}
+
+void setup() 
+{
+  
+  USB.ON();
+  USB.println(F("802_01 example"));
+  
+  // init XBee 
+  xbee802.ON();
+
+
+  // wait for a second
+  delay(1000);
+
+  /////////////////////////////////////
+  // 1. set channel 
+  /////////////////////////////////////
+  xbee802.setChannel(0x0F);
+
+  // check at commmand execution flag
+  if( xbee802.error_AT == 0 ) 
+  {
+    USB.println(F("Channel set OK"));
+  }
+  else 
+  {
+    USB.println(F("Error setting channel"));
+  }
+
+
+  /////////////////////////////////////
+  // 2. set PANID
+  /////////////////////////////////////
+  xbee802.setPAN(PANID);
+
+  // check the AT commmand execution flag
+  if( xbee802.error_AT == 0 ) 
+  {
+    USB.println(F("PANID set OK"));
+  }
+  else 
+  {
+    USB.println(F("Error setting PANID"));  
+  }
+
+  /////////////////////////////////////
+  // 3. write values to XBee module memory
+  /////////////////////////////////////
+  xbee802.writeValues();
+
+  // check the AT commmand execution flag
+  if( xbee802.error_AT == 0 ) 
+  {
+    USB.println(F("write values OK"));
+  }
+  else 
+  {
+    USB.println(F("Error writing values"));  
+  }
+
+  USB.println(F("-------------------------------")); 
+
+  //Set network address
+  xbee802.setOwnNetAddress(0x12, 0x12);
+
+}
+
+void loop() 
+{
+  ///////////////////////////////////////////
+  // 1. Create ASCII frame
+  ///////////////////////////////////////////  
+
+  // create new frame
+  frame.createFrame(ASCII, "WASPMOTE_XBEE");  
+  
+  // add frame fields
+  frame.addSensor(SENSOR_STR, "XBee frame");
+  frame.addSensor(SENSOR_BAT, PWR.getBatteryLevel()); 
+  
+
+  ///////////////////////////////////////////
+  // 2. Send packet
+  ///////////////////////////////////////////  
+
+  // set parameters to packet:
+  packet=(packetXBee*) calloc(1,sizeof(packetXBee)); // Memory allocation
+  packet->mode=UNICAST; // Choose transmission mode: UNICAST or BROADCAST
+  
+  // set destination XBee parameters to packet
+  xbee802.setDestinationParams( packet, receiverAddr, frame.buffer, frame.length, MY_TYPE);   
+  
+  // send XBee packet
+  xbee802.sendXBee(packet);
+  
+  // check TX flag
+  if( xbee802.error_TX == 0 )
+  {
+    USB.println(F("ok"));
+  }
+  else 
+  {
+    USB.println(F("error"));
+  }
+  
+  // free variables
+  free(packet);
+  packet=NULL;
+
+  // wait for five seconds
+  delay(5000);
+}
